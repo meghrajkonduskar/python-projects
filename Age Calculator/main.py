@@ -38,6 +38,7 @@ name_label.grid(row=0, column=0)
 
 # Name Entry
 name_entry = Entry(font=FONT)
+name_entry.focus_set()
 name_entry.grid(row=0, column=1)
 
 # Year Label
