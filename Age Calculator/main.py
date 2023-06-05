@@ -7,12 +7,12 @@ BACKGROUND_COLOR = "lavender"
 
 # initializing window
 window = Tk()
-window.geometry("250x350")
+window.geometry("300x350")
 window.title("Age Calculator")
 window.config(background="lavender")
 
 
-def calculate():
+def calculate(*args):
     """This function takes inputs from the entry fields and returns age."""
 
     # get input from entry fields
@@ -41,7 +41,7 @@ name_entry = Entry(font=FONT)
 name_entry.grid(row=0, column=1)
 
 # Year Label
-year_label = name_label = Label(text="Year:", padx=10, pady=20, font=FONT, background=BACKGROUND_COLOR)
+year_label = name_label = Label(text="Year (yyyy):", padx=10, pady=20, font=FONT, background=BACKGROUND_COLOR)
 year_label.grid(row=1, column=0)
 
 # Year Entry
@@ -49,7 +49,7 @@ year_entry = Entry(font=FONT)
 year_entry.grid(row=1, column=1)
 
 # Month Label
-month_label = Label(text="Month:", padx=10, pady=20, font=FONT, background=BACKGROUND_COLOR)
+month_label = Label(text="Month (mm):", padx=10, pady=20, font=FONT, background=BACKGROUND_COLOR)
 month_label.grid(row=2, column=0)
 
 # Month Entry
@@ -57,7 +57,7 @@ month_entry = Entry(font=FONT)
 month_entry.grid(row=2, column=1)
 
 # Date Label
-date_label = Label(text="Date:", padx=10, pady=20, font=FONT, background=BACKGROUND_COLOR)
+date_label = Label(text="Date (dd):", padx=10, pady=20, font=FONT, background=BACKGROUND_COLOR)
 date_label.grid(row=3, column=0)
 
 # Date Entry
@@ -72,4 +72,5 @@ submit.grid(row=4, column=0, columnspan=2)
 result = Label(text="Please enter your details", font=FONT, background=BACKGROUND_COLOR, pady=20)
 result.grid(row=5, columnspan=2)
 
+window.bind("<Return>", calculate)
 window.mainloop()
